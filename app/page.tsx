@@ -1,0 +1,25 @@
+'use client';
+
+import { useState, useMemo } from 'react';
+import { PasswordInput } from '@/components/PasswordInput';
+import { ScoreDisplay } from '@/components/ScoreDisplay';
+import { IntentionalityBadge } from '@/components/IntentionalityBadge';
+import { DiagnosticsPanel } from '@/components/DiagnosticsPanel';
+import { BreakdownChart } from '@/components/BreakdownChart';
+import { SegmentVisualization } from '@/components/SegmentVisualization';
+import { RadarChartComponent } from '@/components/RadarChart';
+import { KeyboardHeatmap } from '@/components/KeyboardHeatmap';
+import { EntropyMap } from '@/components/EntropyMap';
+import { BreachStatus } from '@/components/BreachStatus';
+import { TierBadge } from '@/components/TierBadge';
+import { BehavioralClassification } from '@/components/BehavioralClassification';
+import { SuggestionsPanel } from '@/components/SuggestionsPanel';
+import { AdversarialAnalysisComponent } from '@/components/AdversarialAnalysis';
+import { BenchmarkComparison } from '@/components/BenchmarkComparison';
+import { PolicyToggle } from '@/components/PolicyToggle';
+import { PolicyProvider } from '@/lib/context/PolicyContext';
+import { analyzePassword } from '@/lib/analyzer/scorer';
+import { classifyPassword } from '@/lib/analyzer/classifier';
+import { generateSuggestions } from '@/lib/analyzer/suggestions';
+import { analyzeAdversarial } from '@/lib/analyzer/adversarial';
+import { createBenchmark } from '@/lib/analyzer/benchmark';
