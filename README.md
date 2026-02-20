@@ -43,6 +43,55 @@ Automatically categorizes passwords into five behavioral types:
 - **AI-Powered Suggestions**: Context-specific improvement recommendations
 - **Real-time Diagnostics**: Strengths and warnings as you type
 
+
+##  Architecture Overview
+
+```
+app/
+├── page.tsx              # Main application page
+├── layout.tsx            # Root layout with metadata
+└── globals.css           # Global styles and theme
+
+components/
+├── ui/                   # Reusable UI components (shadcn/ui)
+├── PasswordInput.tsx     # Secure password entry component
+├── ScoreDisplay.tsx      # Visual score presentation
+├── RadarChart.tsx        # Multi-dimensional visualization
+├── KeyboardHeatmap.tsx   # Interactive keyboard usage
+├── EntropyMap.tsx        # Entropy distribution visualization
+├── BreachStatus.tsx      # HIBP integration component
+├── TierBadge.tsx         # Gamified tier display
+├── BehavioralClassification.tsx  # Password type classifier
+├── SuggestionsPanel.tsx  # AI improvement recommendations
+├── AdversarialAnalysis.tsx       # Attack resistance analysis
+├── BenchmarkComparison.tsx       # System comparison matrix
+├── PolicyToggle.tsx      # Consumer/Enterprise mode switch
+└── theme-provider.tsx    # Dark/light theme support
+
+lib/
+├── analyzer/             # Core analysis engine
+│   ├── scorer.ts         # Main analysis orchestrator
+│   ├── segmentAnalyzer.ts     # Password segmentation
+│   ├── predictabilityAnalyzer.ts  # Pattern detection
+│   ├── randomSmashAnalyzer.ts     # Randomness detection
+│   ├── entropyAnalyzer.ts         # Entropy calculation
+│   ├── ambiguityAnalyzer.ts       # Confusable character detection
+│   ├── breachChecker.ts           # HIBP integration
+│   ├── classifier.ts              # Behavioral classification
+│   ├── suggestions.ts             # AI recommendations
+│   ├── adversarial.ts             # Attack simulation
+│   ├── benchmark.ts               # System comparison
+│   ├── types.ts                   # TypeScript interfaces
+│   └── constants.ts               # Configuration constants
+│
+└── context/
+    └── PolicyContext.tsx          # Policy mode management
+
+hooks/
+├── use-mobile.ts         # Mobile detection hook
+└── use-toast.ts          # Toast notification hook
+```
+
 # IntentPass System Flow & Architecture
 
 ##  System Data Flow Architecture
