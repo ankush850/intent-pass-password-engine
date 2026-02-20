@@ -8,9 +8,44 @@
 A cutting-edge password analysis platform that evaluates passwords beyond traditional complexity rules by measuring **intentionality**, **structural coherence**, and **actual security strength**.
 
 
+
+##  Key Features
+
+###  Multi-Dimensional Password Analysis
+- **Intentionality Index**: Measures whether a password shows deliberate design vs random generation
+- **Structural Coherence**: Evaluates logical segmentation and organization
+- **Entropy Quality**: Advanced entropy calculation with character distribution analysis
+- **Pattern Detection**: Identifies predictable sequences, keyboard walks, and weak substrings
+- **Ambiguity Analysis**: Detects confusable characters that may cause entry errors
+
+###  Behavioral Classification
+Automatically categorizes passwords into five behavioral types:
+- **Predictable**: Contains detectable sequences/patterns
+- **Random**: High entropy, appears randomly generated
+- **Passphrase**: Word-based passwords separated by spaces
+- **Compliance Hack**: Meets rules but lacks intentionality
+- **Balanced**: Well-designed with intention and security
+
+###  Real-Time Security Intelligence
+- **Breach Exposure Check**: Integrates with Have I Been Pwned API (client-side, privacy-safe)
+- **Adversarial Simulation**: Analyzes resistance to 5 attack types (dictionary, brute force, keyboard walk, frequency analysis, Markov chain)
+- **Policy Mode**: Toggle between Consumer (8 chars) and Enterprise (14 chars, NIST/CIS compliant) requirements
+
+### Advanced Visualizations
+- **6-Axis Radar Chart**: Multi-dimensional intentionality visualization
+- **Entropy Distribution Map**: Segment-by-segment entropy breakdown
+- **Keyboard Heatmap**: Interactive QWERTY usage visualization
+- **Evolution Tracker**: Compare password versions over time
+- **Benchmark Comparison**: Compare IntentPass vs Rule-Based vs zxcvbn-like systems
+
+###  Gamification & Feedback
+- **Tier System**: Bronze/Silver/Gold/Platinum badges based on intentionality score
+- **AI-Powered Suggestions**: Context-specific improvement recommendations
+- **Real-time Diagnostics**: Strengths and warnings as you type
+
 # IntentPass System Flow & Architecture
 
-## 🔄 System Data Flow Architecture
+##  System Data Flow Architecture
 
 ### 1. Main Application Flow
 
