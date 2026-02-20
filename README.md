@@ -229,5 +229,35 @@ graph LR
     K --> L[Suggestion Engine]
     L --> M[UI Components]
 ```
+## Getting Started
 
+### Prerequisites
+- Node.js 18+ or pnpm
+- Modern web browser
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd intent-pass-password-engine
+
+# Install dependencies
+npm install
+
+# Start development server
+npm dev
+```
+
+The application will be available at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+# Build the application
+npm build
+
+# Start production server
+npm start
+```
 
