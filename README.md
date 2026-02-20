@@ -36,29 +36,89 @@ graph TD
     R --> S[Real-time Display]
 ```
 
-### 2. Password Analysis DFA (Deterministic Finite Automaton)
+### 2. Password Analysis DFD (Data Flow Diagram - Level 0)
 
 ```mermaid
-stateDiagram-v2
-    [*] --> EmptyState
-    EmptyState --> ProcessingState: User types first character
-    ProcessingState --> SegmentAnalysis: Password length ≥ 1
-    SegmentAnalysis --> PredictabilityCheck: Segmentation complete
-    PredictabilityCheck --> RandomSmashCheck: Pattern detection done
-    RandomSmashCheck --> EntropyCalculation: Randomness analysis complete
-    EntropyCalculation --> AmbiguityDetection: Entropy metrics calculated
-    AmbiguityDetection --> ScoreAggregation: Ambiguity analysis complete
-    ScoreAggregation --> IntentionalityClassification: All components analyzed
-    IntentionalityClassification --> BehavioralClassification: Intent score calculated
-    BehavioralClassification --> SuggestionGeneration: Classification complete
-    SuggestionGeneration --> AdversarialSimulation: Suggestions ready
-    AdversarialSimulation --> BenchmarkComparison: Attack resistance calculated
-    BenchmarkComparison --> Visualization: All analyses complete
-    Visualization --> [*]: Display results
+graph TD
+    subgraph "External Entities"
+        UE[User]
+        AP[API Services - HIBP]
+    end
     
-    EmptyState --> EmptyState: No input
-    ProcessingState --> EmptyState: User clears input
-    Visualization --> ProcessingState: User modifies password
+    subgraph "Process 0: Password Analysis System"
+        A[Input Validation]
+        B[Segment Analysis]
+        C[Predictability Analysis]
+        D[Random Smash Analysis]
+        E[Entropy Analysis]
+        F[Ambiguity Analysis]
+        G[Score Calculation]
+        H[Classification]
+        I[Suggestions Generation]
+        J[Adversarial Analysis]
+        K[Visualization Prep]
+    end
+    
+    UE -->|Password Input| A
+    A -->|Validated Password| B
+    A -->|Validated Password| C
+    A -->|Validated Password| D
+    A -->|Validated Password| E
+    A -->|Validated Password| F
+    B -->|Segment Data| G
+    C -->|Pattern Data| G
+    D -->|Randomness Data| G
+    E -->|Entropy Data| G
+    F -->|Ambiguity Data| G
+    G -->|Scores| H
+    H -->|Classification| I
+    H -->|Classification| J
+    I -->|Suggestions| K
+    J -->|Adversarial Data| K
+    AP -->|Breach Data| J
+    K -->|Processed Data| UE
+```
+
+### 2.1. Password Analysis DFD (Level 1 - Input Processing)
+
+```mermaid
+graph LR
+    UE[User Entity] -->|Raw Password| A[Validate Input]
+    A -->|Valid Password| B[Segment Analysis]
+    A -->|Invalid Input| C[Error Response]
+    B -->|Segment Data| D[Store Segmentation Results]
+    D -->|Segmentation Output| E[Calculate Component Scores]
+```
+
+### 2.2. Password Analysis DFD (Level 1 - Core Analysis)
+
+```mermaid
+graph LR
+    A[Segment Analysis] -->|Segments| B[Predictability Analysis]
+    A -->|Segments| C[Random Smash Analysis]
+    A -->|Segments| D[Entropy Analysis]
+    A -->|Segments| E[Ambiguity Analysis]
+    
+    B -->|Predictability Data| F[Score Aggregation]
+    C -->|Randomness Data| F
+    D -->|Entropy Data| F
+    E -->|Ambiguity Data| F
+    
+    F -->|Component Scores| G[Intentionality Calculation]
+    G -->|Intentionality Index| H[Classification]
+```
+
+### 2.3. Password Analysis DFD (Level 1 - Output Processing)
+
+```mermaid
+graph RL
+    A[Classification Results] --> B[Suggestions Generation]
+    C[Adversarial Analysis] --> B
+    D[Benchmark Comparison] --> B
+    B -->|Enhanced Results| E[Visualization Data Prep]
+    F[Raw Analysis Data] --> E
+    E -->|Formatted Data| G[UI Components]
+    G -->|Visual Output| H[User Display]
 ```
 
 ### 3. Component Analysis Pipeline
