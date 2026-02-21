@@ -260,4 +260,36 @@ npm build
 # Start production server
 npm start
 ```
+Security Analysis Pipeline
+
+```mermaid
+graph TB
+    A[Password Input] --> B[Breach Exposure Check]
+    A --> C[Pattern Analysis]
+    A --> D[Entropy Assessment]
+    A --> E[Ambiguity Detection]
+    
+    B --> F[Security Risk Level]
+    C --> G[Predictability Score]
+    D --> H[Entropy Quality]
+    E --> I[Usability Risk]
+    
+    F --> J[Overall Security Rating]
+    G --> J
+    H --> J
+    I --> J
+    
+    J --> K[Attack Resistance Analysis]
+    K --> L[Dictionary Attack]
+    K --> M[Brute Force]
+    K --> N[Keyboard Walk]
+    K --> O[Frequency Analysis]
+    K --> P[Markov Chain]
+    
+    L --> Q[Resistance Percentage]
+    M --> Q
+    N --> Q
+    O --> Q
+    P --> Q
+```
 
