@@ -99,25 +99,15 @@ hooks/
 ### 1. Main Application Flow
 
 ```mermaid
-graph TD
-    A[User Input] --> B[PasswordInput Component]
-    B --> C{Password Length Check}
-    C -->|Empty| D[Show Empty State]
-    C -->|Has Content| E[analyzePassword Function]
-    E --> F[Segment Analysis]
-    F --> G[Predictability Analysis]
-    G --> H[Random Smash Analysis]
-    H --> I[Ambiguity Analysis]
-    I --> J[Entropy Analysis]
-    J --> K[Component Score Calculation]
-    K --> L[Overall Score Generation]
-    L --> M[Intentionality Index Calculation]
-    M --> N[Classification Engine]
-    N --> O[Suggestion Generator]
-    O --> P[Adversarial Analysis]
-    P --> Q[Benchmark Comparison]
-    Q --> R[UI Component Rendering]
-    R --> S[Real-time Display]
+graph LR
+    A[Input] --> B{Length}
+    B -->|Empty| C[Empty]
+    B -->|OK| D[Analyze]
+    D --> E[Score]
+    E --> F[Classify]
+    F --> G[Suggest]
+    G --> H[Security]
+    H --> I[Display]
 ```
 
 ### 2. Password Analysis DFD (Data Flow Diagram - Level 0)
