@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -8,8 +8,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'IntentPass - Password Strength & Intentionality Analyzer',
-  description: 'Analyze your password\'s intentionality, structural coherence, and actual strength beyond traditional complexity rules. Real-time password intelligence.',
-  generator: 'v0.app',
+  description: "Analyze your password's intentionality, structural coherence, and actual strength beyond traditional complexity rules. Real-time password intelligence.",
   icons: {
     icon: [
       {
@@ -26,14 +25,16 @@ export const metadata: Metadata = {
       },
     ],
     apple: '/apple-icon.png',
+   
   },
   keywords: ['password', 'security', 'analyzer', 'strength', 'intentionality'],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 }
 
 export default function RootLayout({
