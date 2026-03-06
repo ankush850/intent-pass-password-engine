@@ -4,14 +4,15 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat&logo=typescript)](https://www.typescriptlang.org)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat&logo=react)](https://reactjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com)
+[![pnpm](https://img.shields.io/badge/pnpm-10.30-f69220?style=flat&logo=pnpm)](https://pnpm.io)
 
 A cutting-edge password analysis platform that evaluates passwords beyond traditional complexity rules by measuring **intentionality**, **structural coherence**, and **actual security strength**.
 
 
 
-##  Key Features
+## 🎨 Features & Capabilities
 
-###  Multi-Dimensional Password Analysis
+### 🔍 Multi-Dimensional Password Analysis
 - **Intentionality Index**: Measures whether a password shows deliberate design vs random generation
 - **Structural Coherence**: Evaluates logical segmentation and organization
 - **Entropy Quality**: Advanced entropy calculation with character distribution analysis
@@ -92,7 +93,31 @@ hooks/
 └── use-toast.ts          # Toast notification hook
 ```
 
-# IntentPass System Flow & Architecture
+## 🎯 Architecture Overview
+
+### Recent Updates (2026)
+
+#### ✨ UI Redesign
+- **Modern Glassmorphism Design**: Backdrop blur effects with gradient accents
+- **Enhanced Visual Hierarchy**: Card-based layout with improved spacing
+- **Animated Background Elements**: Subtle pulsing gradients for visual interest
+- **Sticky Header**: Navigation with logo and policy toggle
+- **Improved Empty State**: Feature badges and engaging call-to-action
+- **Custom CSS Animations**: Float, glow, and gradient animations
+
+#### 🔧 Technical Improvements
+- **Package Manager Cleanup**: Migrated to pnpm (removed npm lockfiles)
+- **Viewport Metadata Fix**: Separated viewport from metadata export
+- **Tailwind CSS v4**: Using latest version with PostCSS integration
+- **Context Implementation**: Added PolicyContext for state management
+- **Icon Assets**: All images properly configured in public folder
+
+#### 🎨 Design Features
+- **Gradient Text Effects**: Modern bg-clip-text styling
+- **Backdrop Blur**: Glassmorphism on cards and header
+- **Shadow Hierarchy**: Consistent elevation system
+- **Color-Coded Metrics**: Visual distinction for different data types
+- **Responsive Layout**: Mobile-first design with Tailwind breakpoints
 
 ##  System Data Flow Architecture
 
@@ -219,38 +244,56 @@ graph LR
     K --> L[Suggestion Engine]
     L --> M[UI Components]
 ```
-## Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ or pnpm
-- Modern web browser
+- **Node.js 18+** (recommended: Node.js 20+)
+- **pnpm** (preferred) or npm
+- Modern web browser (Chrome, Firefox, Edge, Safari)
 
 ### Installation
 
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd intent-pass-password-engine
+cd intent-pass-password-engine-main
 
-# Install dependencies
+# Install dependencies using pnpm (recommended)
+pnpm install
+
+# Alternative: using npm
 npm install
-
-# Start development server
-npm dev
 ```
 
-The application will be available at `http://localhost:3000`
-
-### Build for Production
+### Development
 
 ```bash
-# Build the application
-npm build
+# Start development server with Turbopack
+pnpm dev
+
+# The application will be available at:
+# Local:   http://localhost:3000
+# Network: http://<your-ip>:3000
+```
+
+### Production Build
+
+```bash
+# Build for production
+pnpm build
 
 # Start production server
-npm start
+pnpm start
 ```
-Security Analysis Pipeline
+
+### Code Quality
+
+```bash
+# Run ESLint
+pnpm lint
+```
+
+## 🔐 Security Analysis Pipeline
 
 ```mermaid
 graph TB
@@ -282,4 +325,83 @@ graph TB
     O --> Q
     P --> Q
 ```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### Module Resolution Errors
+If you encounter "Module not found" errors:
+```bash
+# Clean install
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+#### Tailwind CSS Not Loading
+Ensure you're using the correct import syntax in `globals.css`:
+```css
+@import 'tailwindcss';
+@import 'tw-animate-css';
+```
+
+#### Build Errors with Turbopack
+Clear the build cache:
+```bash
+rm -rf .next
+pnpm dev
+```
+
+#### Multiple Lockfiles Warning
+Remove conflicting lockfiles:
+```bash
+# Keep only pnpm-lock.yaml
+rm package-lock.json
+pnpm install
+```
+
+### Performance Tips
+- Use **pnpm** instead of npm for faster installs
+- Enable Turbopack for development (default in v16+)
+- Clear `.next` folder if experiencing stale builds
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+For issues and feature requests, please create an issue in the repository.
+
+---
+
+**Built with ❤️ using Next.js, React, TypeScript, and Tailwind CSS**
+
+## 🛠️ Technology Stack
+
+### Frontend Framework
+- **Next.js 16.1** - React framework with App Router and Turbopack
+- **React 19.2** - UI library with latest features
+- **TypeScript 5.7** - Type-safe development
+
+### Styling & UI
+- **Tailwind CSS 4.2** - Utility-first CSS framework
+- **shadcn/ui** - Beautiful, accessible component library
+- **Radix UI** - Unstyled, accessible UI primitives
+- **Lucide Icons** - Clean, modern icon set
+
+### Visualization
+- **Recharts** - Composable charting library
+- **Custom SVG Components** - Hand-crafted visualizations
+
+### Development Tools
+- **Turbopack** - High-performance bundler (Rust-based)
+- **PostCSS 8.5** - CSS transformation tool
+- **ESLint** - Code linting and quality
+
+## 📦 Project Structure
 
